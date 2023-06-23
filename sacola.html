@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Site de Produtos</title>
+    <style>
+        /* Seus estilos CSS aqui */
+    </style>
+</head>
+<body>
+    <!-- Seus elementos HTML aqui -->
+
+    <script>
+        // Lista para armazenar os itens selecionados
+        var itensSelecionados = [];
+
+        function adicionarItem(nome, preco) {
+            // Criar objeto para representar o item selecionado
+            var item = {
+                nome: nome,
+                preco: preco
+            };
+
+            // Adicionar o item à lista de itens selecionados
+            itensSelecionados.push(item);
+
+            // Atualizar a sacola digital
+            atualizarSacola();
+        }
+
+        function removerItem(index) {
+            // Remover o item da lista de itens selecionados
+            itensSelecionados.splice(index, 1);
+
+            // Atualizar a sacola digital
+            atualizarSacola();
+        }
+
+        function atualizarSacola() 
+            var sacolaDigital = document.getElementById('sacola-digital');
+            var total = 0;
+
+            // Limpar a sacola digital
+            sacolaDigital.innerHTML = '';
+
+            // Percorrer a lista de itens selecionados
+            for (var i = 0; i < itensSelecionados.length; i++) 
+                var item = itensSelecionados[i];
+                total += item.preco;
+
+                // Criar um elemento para exibir o item na sacola digital
+                var itemElement = document.createElement('div');
+                itemElement.innerHTML = item.nome + ' - R$' + item.preco;
+                </script>
+                
+                <script>
+  // Lista para armazenar os itens selecionados
+  var itensSelecionados = [];
+
+  function adicionarItem(nome, preco) {
+    // Criar objeto para representar o item selecionado
+    var item = {
+      nome: nome,
+      preco: preco
+    };
+
+    // Adicionar o item à lista de itens selecionados
+    itensSelecionados.push(item);
+
+    // Atualizar a sacola digital
+    atualizarSacola();
+  }
+
+  function removerItem(index) {
+    // Remover o item da lista de itens selecionados
+    itensSelecionados.splice(index, 1);
+
+    // Atualizar a sacola digital
+    atualizarSacola();
+  }
+
+  function atualizarSacola() {
+    var sacolaDigital = document.getElementById('sacola-digital');
+    var total = 0;
+
+    // Limpar a sacola digital
+    sacolaDigital.innerHTML = '';
+
+    // Percorrer a lista de itens selecionados
+    for (var i = 0; i < itensSelecionados.length; i++) {
+      var item = itensSelecionados[i];
+      total += item.preco;
+
+      // Criar um elemento para exibir o item na sacola digital
+      var itemElement = document.createElement('div');
+      itemElement.innerHTML = item.nome + ' - R$' + item.preco;
+      sacolaDigital.appendChild(itemElement);
+    }
+
+    // Atualizar o total na sacola digital
+    var totalElement = document.createElement('div');
+    totalElement.innerHTML = 'Total: R$' + total;
+    sacolaDigital.appendChild(totalElement);
+  }
+</script>
+
+</body>
+</html>
